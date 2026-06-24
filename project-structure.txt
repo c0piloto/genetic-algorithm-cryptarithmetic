@@ -1,0 +1,20 @@
+criptoaritmetica-genetica/
+├── .gitignore
+├── README.md
+├── Relatorio/
+│   └── relatorio_final.pdf
+└── src/                              
+    ├── etapa1/                        <-- Package da Etapa 1
+    │   ├── core/                      <-- codigo compartilhado(Fitness, Individuo, etc)
+    │   ├── tm1_s1_c1_r1/        
+    │   │   └── Variação01.java
+    │   └── tm1_s1_c1_r2/        
+    │       └── Variação02.java
+    ├── etapa2/                        <-- Package da Etapa 2
+    │   ├── var01_PopSize/
+    │   │   └── MainPopSize.java
+    │   └── var02_MutRate/
+    │       └── MainMutRate.java
+    └── etapa3/                        <-- Package da Etapa 3
+        └── var01_ErroPos/
+            └── MainErroPos.java
