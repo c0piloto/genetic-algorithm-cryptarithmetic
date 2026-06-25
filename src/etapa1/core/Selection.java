@@ -21,6 +21,7 @@ public class Selection {
     return tournament.getFittest();
   }
 
+<<<<<<< HEAD
   public static Individual rouletteSelection(Population pop) {
     // Criamos a porcentagem de corte por sorteio entre 0% e 100%
     double cut = random.nextDouble(1.0);
@@ -43,6 +44,10 @@ public class Selection {
   public static void updateProb(Population pop) {
 
     // Instancia o vetor de probabilidades acumuladas com o tamanho da população
+=======
+  //calcula a probabilidade cumulativa de cada individuo ser selecionado
+  private static void updateProb(Population pop) {
+>>>>>>> main
     cumulativeProb = new double[pop.getSize()];
 
     // Atributos auxiliares para guardar o total inverso da probabilidade
