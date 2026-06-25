@@ -1,27 +1,15 @@
-package src.etapa1.core;
+package etapa1.core;
 
+import etapa1.core.Individual;
+import etapa1.core.Population;
 import java.util.Random;
 
-import src.etapa1.core.Individual;
-
-public class Selection {
+public class RouletteSelection implements SelectionStrategy {
   private static Random random = new Random();
   private static double[] cumulativeProb;
 
-  public static Individual tournamentSelection(Population pop, int tourSize) {
-    // criamos uma população temporaria pra armazenar os individuos selecionados pro
-    // torneio
-    Population tournament = new Population();
-    // sequestramos os individuos que vão participar do torneio
-    for (int i = 0; i < tourSize; i++) {
-      int randomIndex = random.nextInt(pop.getSize());
-      tournament.addIndividual(pop.getIndividuals().get(randomIndex));
-    }
-    // retornamos o individuo mais apto
-    return tournament.getFittest();
-  }
-
-  public static Individual rouletteSelection(Population pop) {
+  @Override
+  public Individual select(Population pop) {
     // Criamos a porcentagem de corte por sorteio entre 0% e 100%
     double cut = random.nextDouble(1.0);
 
@@ -40,8 +28,14 @@ public class Selection {
     return pop.getIndividuals().getLast();
   }
 
+  @Override
+  public Individual select(Population pop, int tourSize) {
+    return null;
+  }
+
+  @Override
   // Calcula a probabilidade cumulativa de cada individuo ser selecionado
-  private static void updateProb(Population pop) {
+  public void updateProb(Population pop) {
     cumulativeProb = new double[pop.getSize()];
 
     // Atributos auxiliares para guardar o total inverso da probabilidade
