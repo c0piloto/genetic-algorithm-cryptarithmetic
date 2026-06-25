@@ -22,6 +22,7 @@ public class Selection {
     return tournament.getFittest();
   }
 
+  //calcula a probabilidade cumulativa de cada individuo ser selecionado
   private static void updateProb(Population pop) {
     cumulativeProb = new double[pop.getSize()];
 
