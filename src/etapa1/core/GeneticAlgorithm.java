@@ -1,7 +1,5 @@
 package etapa1.core;
 
-import etapa1.core.*;
-
 public class GeneticAlgorithm {
 
   private SelectionStrategy selection;

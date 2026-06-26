@@ -1,7 +1,5 @@
 package etapa1.core;
 
-import etapa1.core.Population;
-
 public class OrderedReinsertion implements ReinsertionStrategy {
   @Override
   public Population reinsert(Population parentPop, Population childrenPop, double elitismRate) {

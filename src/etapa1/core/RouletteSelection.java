@@ -1,7 +1,5 @@
 package etapa1.core;
 
-import etapa1.core.Individual;
-import etapa1.core.Population;
 import java.util.Random;
 
 public class RouletteSelection implements SelectionStrategy {
@@ -26,11 +24,6 @@ public class RouletteSelection implements SelectionStrategy {
 
     // Retornamos o melhor indivíduo
     return pop.getIndividuals().getLast();
-  }
-
-  @Override
-  public Individual select(Population pop, int tourSize) {
-    return null;
   }
 
   @Override
