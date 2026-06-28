@@ -43,3 +43,74 @@ In the second stage, we took the best configuration from Stage 1 (TM2S1C2R2) and
 * **Var08 (Population of 120 + 35% Mutation Rate):** Increased convergence with a slightly higher average mean time.
 * **Var09 (60% Mutation Rate):** Yielded a significant increase in convergence.
 * **Var10 (Population of 120 + 70% Mutation Rate):** Resulted in a significant increase in convergence while lowering the average mean time.
+
+## Stage
+
+In the third stage, we took the best configuration from Stage 2 (Var10) and refactored the fitness evaluation to be generic, in order to get more optimized results we created a parser that mapped the unique letters in the equations to a number in the chromosome, also FitnessEvaluator was refactored to Strategy Pattern as the Positional fitness evaluator was added as to try and optimize convergence. Each variation changes only one parameter at a time, combinations might result into better convergence per time.
+The five problems tested were as follows:
+
+**SEND + MORE = MONEY
+EAT + THAT = APPLE
+CROSS + ROADS = DANGER
+COCA + COLA = OASIS
+DONALD + GERALD = ROBERT**
+
+* **Var01_Base (Same as Var10):** 
+
+SEND + MORE = MONEY            | Convergence:  95.80% | Mean time: 0.63 ms
+EAT + THAT = APPLE             | Convergence:  21.60% | Mean time: 1.37 ms
+CROSS + ROADS = DANGER         | Convergence:   0.40% | Mean time: 1.72 ms
+COCA + COLA = OASIS            | Convergence:  11.80% | Mean time: 1.40 ms
+DONALD + GERALD = ROBERT       | Convergence:   5.50% | Mean time: 1.78 ms
+
+=== OVERALL AVARAGES ===
+Convergence avarage: 27.02%
+Total time avarage:  1.38 ms
+
+* **Var02_popsize (Population size increased to 180):**
+
+SEND + MORE = MONEY            | Convergence:  98.60% | Mean time: 0.77 ms
+EAT + THAT = APPLE             | Convergence:  31.10% | Mean time: 1.78 ms
+CROSS + ROADS = DANGER         | Convergence:   1.60% | Mean time: 2.59 ms
+COCA + COLA = OASIS            | Convergence:  20.90% | Mean time: 2.01 ms
+DONALD + GERALD = ROBERT       | Convergence:   7.80% | Mean time: 2.63 ms
+
+=== OVERALL AVARAGES ===
+Convergence avarage: 32.00%
+Total time avarage:  1.96 ms
+
+* **Var03_maxgen (Generations increased to 80):**
+
+SEND + MORE = MONEY            | Convergence:  96.40% | Mean time: 0.69 ms
+EAT + THAT = APPLE             | Convergence:  24.20% | Mean time: 1.96 ms
+CROSS + ROADS = DANGER         | Convergence:   1.10% | Mean time: 2.54 ms
+COCA + COLA = OASIS            | Convergence:  11.90% | Mean time: 2.08 ms
+DONALD + GERALD = ROBERT       | Convergence:   7.40% | Mean time: 2.72 ms
+
+=== OVERALL AVARAGES ===
+Convergence avarage: 28.20%
+Total time avarage:  2.00 ms
+
+* **Var04_mutrate (Mutation rate increased to 90%):**
+
+SEND + MORE = MONEY            | Convergence:  97.80% | Mean time: 0.69 ms
+EAT + THAT = APPLE             | Convergence:  24.80% | Mean time: 1.39 ms
+CROSS + ROADS = DANGER         | Convergence:   1.00% | Mean time: 1.67 ms
+COCA + COLA = OASIS            | Convergence:  15.30% | Mean time: 1.44 ms
+DONALD + GERALD = ROBERT       | Convergence:   8.30% | Mean time: 1.83 ms
+
+=== OVERALL AVARAGES ===
+Convergence avarage: 29.44%
+Total time avarage:  1.40 ms
+
+* **Var05_properror (Fitness evaluator changed to Positional Error):**
+
+SEND + MORE = MONEY            | Convergence:  77.20% | Mean time: 1.02 ms
+EAT + THAT = APPLE             | Convergence:  13.10% | Mean time: 1.52 ms
+CROSS + ROADS = DANGER         | Convergence:   4.60% | Mean time: 1.69 ms
+COCA + COLA = OASIS            | Convergence:  31.80% | Mean time: 1.31 ms
+DONALD + GERALD = ROBERT       | Convergence:  13.70% | Mean time: 1.76 ms
+
+=== OVERALL AVARAGES ===
+Convergence avarage: 28.08%
+Total time avarage:  1.46 ms

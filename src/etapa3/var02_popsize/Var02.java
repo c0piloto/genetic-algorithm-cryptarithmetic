@@ -58,12 +58,12 @@ public class Var02 {
       totalConvergence += convergenceRate;
       totalTime += avgTime;
 
-      System.out.printf("%-30s | Convergência: %6.2f%% | Tempo médio: %.2f ms%n",
+      System.out.printf("%-30s | Convergence: %6.2f%% | Mean time: %.2f ms%n",
           equation, convergenceRate, avgTime);
     }
 
-    System.out.println("\n=== MÉDIAS GERAIS ===");
-    System.out.printf("Convergência média: %.2f%%%n", totalConvergence / PROBLEMS.length);
-    System.out.printf("Tempo médio geral:  %.2f ms%n", totalTime / PROBLEMS.length);
+    System.out.println("\n=== OVERALL AVARAGES ===");
+    System.out.printf("Convergence avarage: %.2f%%%n", totalConvergence / PROBLEMS.length);
+    System.out.printf("Total time avarage:  %.2f ms%n", totalTime / PROBLEMS.length);
   }
 }
