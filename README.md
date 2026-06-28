@@ -33,16 +33,31 @@ The clear winner in this stage was **TM2S1C2R2**, achieving a 73.23% convergence
 
 In the second stage, we took the best configuration from Stage 1 (TM2S1C2R2) and attempted to optimize it further by tweaking parameters such as population size, generation count, and mutation/crossover rates.
 
-* **Var01 (Population of 150):** Showed a significant increase in the average mean time and a slight improvement in overall convergence.
-* **Var02 (Population of 200):** Yielded similar results to Var01, but with greater improvements to convergence.
-* **Var03 (Population of 75):** Showed an improved average mean time but lower convergence rates.
-* **Var04 (100 Max Generations):** Similar to increasing the total population (higher average mean time with a slight improvement to convergence rate), but mitigated by the early stop mechanism.
-* **Var05 (90% Crossover Rate):** Resulted in a slight increase in the convergence rate.
-* **Var06 (30% Mutation Rate):** Resulted in a slight increase in the convergence rate, performing around 3% better than Var05.
-* **Var07 (30% Elitism):** Showed no significant changes.
-* **Var08 (Population of 120 + 35% Mutation Rate):** Increased convergence with a slightly higher average mean time.
-* **Var09 (60% Mutation Rate):** Yielded a significant increase in convergence.
-* **Var10 (Population of 120 + 70% Mutation Rate):** Resulted in a significant increase in convergence while lowering the average mean time.
+
+| Variant | Average Fitness | Average Convergence | Average Time |
+| :--- | :--- | :--- | :--- |
+| Variant 01 | 1.0  | 86.10%  | 1.928 ms |
+| Variant 02 | 0.1  | 90.99%  | 2.118 ms |
+| Variant 03 | 0.3  | 63.82%  | 1.738 ms |
+| Variant 04 | 0.3  | 74.95%  | 2.311 ms |
+| Variant 05 | 1.7  | 74.09%  | 1.781 ms |
+| Variant 06 | 3.0 | 78.02% | 1.873 ms |
+| Variant 07 | 0.2 | 74.65% | 2.742 ms |
+| Variant 08 | 0 | 85.44% | 1.916 ms |
+| Variant 09 | 0  | 89.62%  | 1.743 ms |
+| Variant 10 | 0.45 | 96.20% | 1.465 ms |
+
+
+* **Var01 (População de 150):** Showed a significant increase in the average execution time, but yielded a solid improvement in overall convergence (reaching 86.10%).
+* **Var02 (População de 200):** Yielded similar trends to Var01, pushing convergence even higher (90.99%), but driving the execution time dangerously close to the 50% penalty limit.
+* **Var03 (População de 75):** Resulted in a sharp drop in convergence. Because it struggled to find the solution, it failed to trigger early stopping, causing the average execution time to actually increase.
+* **Var04 (100 Max Generations):** Resulted in a slight improvement to the convergence rate. The execution time increased but was effectively mitigated by the early stop mechanism, keeping it just under the penalty limit.
+* **Var05 (90% Crossover Rate):** Resulted in a minor increase in the convergence rate compared to the Stage 1 baseline, with a slight time penalty.
+* **Var06 (30% Mutation Rate):** Resulted in a slight increase in the convergence rate, performing roughly 4% better than Var05.
+* **Var07 (30% Elitism):** While convergence saw no significant changes, this variant is disqualified as the execution time spiked to 2.742 ms, violating the assignment's rule of a maximum 50% time increase.
+* **Var08 (Population 120 + 35% Mutation):** Increased convergence significantly (85.44%) while maintaining a safe and stable average execution time.
+* **Var09 (60% Mutation Rate):** Yielded a massive jump in convergence (89.62%) while keeping the execution time highly optimized.
+* **Var10 (Population 120 + 70% Mutation):** achieved a near-perfect convergence rate of 96.20%. Surprisingly, the average time decreased below the Stage 1 baseline (1.465 ms). The aggressive 70% mutation rate allowed the algorithm to find the global optimum so fast that early stopping was triggered in the earliest generations.
 
 ## Stage
 
