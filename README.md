@@ -1,2 +1,45 @@
-# genetic-algorithm-cryptarithmetic
-An GA wich purpose is to solve the 10 letter long Cryptarithmetic Puzzle by maping a number from 0 to 9 for each letter in a manner that the equation is valid. (e.g.: SEND + MORE = MONEY)
+# Genetic Algorithm: Cryptarithmetic Solver
+
+A Genetic Algorithm (GA) designed to solve 10-letter cryptarithmetic puzzles by mapping a unique digit from 0 to 9 to each letter, ensuring the mathematical equation is valid (e.g., SEND + MORE = MONEY).
+
+# Results
+
+## Stage 1
+
+In the first stage, we implemented the necessary genetic operators for the GA and their respective methods. We then ran and evaluated the 16 different combinations of these methods.
+
+The clear winner in this stage was **TM2S1C2R2**, achieving a 73.23% convergence rate in under 2 milliseconds.
+
+| ID | Average Fitness | Average Convergence | Average Mean Time |
+| --- | --- | --- | --- |
+| **TM1S1C1R1** | 1.8 | 43.31% | 1.557 ms |
+| **TM1S1C1R2** | 1.7 | 45.79% | 1.702 ms |
+| **TM1S1C2R1** | 2.5 | 64.96% | 1.516 ms |
+| **TM1S1C2R2** | 1.9 | 68.28% | 1.634 ms |
+| **TM1S2C1R1** | 9.1 | 39.81% | 1.522 ms |
+| **TM1S2C1R2** | 2.55 | 42.95% | 1.555 ms |
+| **TM1S2C2R1** | 2.9 | 51.54% | 1.978 ms |
+| **TM1S2C2R2** | 5.6 | 51.59% | 1.875 ms |
+| **TM2S1C1R1** | 3.6 | 52.00% | 1.299 ms |
+| **TM2S1C1R2** | 0.9 | 54.93% | 1.647 ms |
+| **TM2S1C2R1** | 2.2 | 70.50% | 1.568 ms |
+| **TM2S1C2R2** | 1.6 | 73.23% | 1.563 ms |
+| **TM2S2C1R1** | 3.7 | 46.59% | 1.413 ms |
+| **TM2S2C1R2** | 3.0 | 50.45% | 1.465 ms |
+| **TM2S2C2R1** | 4.3 | 54.00% | 1.852 ms |
+| **TM2S2C2R2** | 1.2 | 57.20% | 1.768 ms |
+
+## Stage 2
+
+In the second stage, we took the best configuration from Stage 1 (TM2S1C2R2) and attempted to optimize it further by tweaking parameters such as population size, generation count, and mutation/crossover rates.
+
+* **Var01 (Population of 150):** Showed a significant increase in the average mean time and a slight improvement in overall convergence.
+* **Var02 (Population of 200):** Yielded similar results to Var01, but with greater improvements to convergence.
+* **Var03 (Population of 75):** Showed an improved average mean time but lower convergence rates.
+* **Var04 (100 Max Generations):** Similar to increasing the total population (higher average mean time with a slight improvement to convergence rate), but mitigated by the early stop mechanism.
+* **Var05 (90% Crossover Rate):** Resulted in a slight increase in the convergence rate.
+* **Var06 (30% Mutation Rate):** Resulted in a slight increase in the convergence rate, performing around 3% better than Var05.
+* **Var07 (30% Elitism):** Showed no significant changes.
+* **Var08 (Population of 120 + 35% Mutation Rate):** Increased convergence with a slightly higher average mean time.
+* **Var09 (60% Mutation Rate):** Yielded a significant increase in convergence.
+* **Var10 (Population of 120 + 70% Mutation Rate):** Resulted in a significant increase in convergence while lowering the average mean time.
