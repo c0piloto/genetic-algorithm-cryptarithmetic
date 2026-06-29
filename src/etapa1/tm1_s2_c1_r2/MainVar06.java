@@ -38,7 +38,7 @@ public class MainVar06 {
     double avgTime = totalTime / (double) RUNS;
     double avgFitness = totalFitness / (double) RUNS;
 
-    System.out.println("=== TM1 S1 C1 R1 ===");
+    System.out.println("=== TM1 S2 C1 R2 ===");
     System.out.println("Best individual:        " + result.toString());
     System.out.printf("Convergence:     %.2f%%%n", convergenceRate);
     System.out.printf("Avarage Time:    %.2f ms%n", avgTime);
