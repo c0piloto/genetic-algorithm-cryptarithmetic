@@ -59,7 +59,7 @@ In the second stage, we took the best configuration from Stage 1 (TM2S1C2R2) and
 * **Var09 (60% Mutation Rate):** Yielded a massive jump in convergence (89.62%) while keeping the execution time highly optimized.
 * **Var10 (Population 120 + 70% Mutation):** achieved a near-perfect convergence rate of 96.20%. Surprisingly, the average time decreased below the Stage 1 baseline (1.465 ms). The aggressive 70% mutation rate allowed the algorithm to find the global optimum so fast that early stopping was triggered in the earliest generations.
 
-## Stage
+## Stage 3
 
 In the third stage, we took the best configuration from Stage 2 (Var10) and refactored the fitness evaluation to be generic, in order to get more optimized results we created a parser that mapped the unique letters in the equations to a number in the chromosome, also FitnessEvaluator was refactored to Strategy Pattern as the Positional fitness evaluator was added as to try and optimize convergence. Each variation changes only one parameter at a time, combinations might result into better convergence per time.
 The five problems tested were as follows:
